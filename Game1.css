@@ -1,0 +1,100 @@
+.imag{
+	border-style:solid;  
+	border-width:30px;
+	float: left; 
+	border-radius:15px;
+	position: fixed;
+	height: 200px;
+	width: 100px;
+	background-size: 100px 200px;
+	background-repeat: no-repeat;
+}
+.toprow{
+	top: 5%;
+	
+}
+.bottomrow{
+	top: 45%;
+	
+}
+div.facedown
+{
+	background-image: url('http://static.tumblr.com/264e223b77645f2705fa9cf2e310987c/jvsbomj/M60mpstkq/tumblr_static_question_mark.png');
+}
+.elephant
+{
+	border-color:#ff0000;
+	background-image: url('http://www.clker.com/cliparts/8/6/d/2/12161376851595770453lemmling_Cartoon_elephant.svg.hi.png');
+}
+.facedown.elephant, .facedown.cow
+{
+	border-color:#ffc0cb;
+}
+.fireworks
+{
+	background-size: 250px 500px;
+	height: 500px;
+	width: 250px;
+	top: 10%;
+}
+.tiger
+{
+	border-color:#0000ff;
+	background-image: url('http://www.clipartlord.com/wp-content/uploads/2013/07/tiger4.png');
+}
+.facedown.tiger, .facedown.horse
+{
+	border-color:#add8e6
+}
+.monkey
+{
+	background-image: url('http://sweetclipart.com/multisite/sweetclipart/files/monkey_with_banana.png');
+	border-color:#008000;
+}
+.facedown.monkey, .facedown.pig
+{
+	border-color:#98fb98;
+}
+.snake
+{
+	background-image:url('http://3.bp.blogspot.com/-YyVUBri5SJs/UiDFZAiHB7I/AAAAAAAAA-s/fbxppoYg-QE/s1600/cartoon-snake-clipart.jpg');
+	border-color:#ffff00;
+}
+.facedown.snake, .facedown.chicken
+{
+	border-color:#ffff90;
+}
+.crocodile
+{
+	background-image:url('http://addison.typepad.com/.a/6a00d8341c1a9053ef01a73dd31b6f970d-pi');
+	border-color:#800080;
+}
+.facedown.crocodile, .facedown.duck
+{
+	border-color:#dda0dd;
+}
+.cow
+{
+	background-image:url('http://images.all-free-download.com/images/graphiclarge/cow_clip_art_6252.jpg');
+	border-color:#ff0000;
+}
+.horse
+{
+	background-image:url('http://horseclipart.co/1024/clip-art-of-a-happy-brown-horse-doing-the-travolta-disco-dance-move-by-dero-260.jpg');
+	border-color:#0000ff;
+}
+.pig
+{
+	background-image:url('http://www.clker.com/cliparts/f/d/6/9/1206569038138204295bsantos_Pig.svg.hi.png');
+	border-color:#008000;
+}
+.chicken
+{
+	background-image:url('http://www.clker.com/cliparts/Q/S/J/f/Q/3/yellow-chicken-hi.png');
+	border-color:#ffff00;
+}
+.duck
+{
+	background-image:url('http://cdn.dailyclipart.net/wp-content/uploads/medium/Duck.jpg');
+	border-color:#800080;
+}
