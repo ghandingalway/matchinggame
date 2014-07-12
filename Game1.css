@@ -8,6 +8,7 @@
 	width: 100px;
 	background-size: 100px 200px;
 	background-repeat: no-repeat;
+	visiblity: visible;
 }
 .toprow{
 	top: 5%;
@@ -16,6 +17,27 @@
 .bottomrow{
 	top: 45%;
 	
+}
+.firstcolumn
+{
+	left:5%;
+	
+}
+.secondcolumn
+{
+	left:25%;
+}
+.thirdcolumn
+{
+	left:45%;
+}
+.fourthcolumn
+{
+	left:65%;
+}
+.fifthcolumn
+{
+	left:85%;
 }
 div.facedown
 {
@@ -30,12 +52,21 @@ div.facedown
 {
 	border-color:#ffc0cb;
 }
-.fireworks
+.fireworks1
 {
 	background-size: 250px 500px;
 	height: 500px;
 	width: 250px;
 	top: 10%;
+	left:15%;
+}
+.fireworks2
+{
+	background-size: 250px 500px;
+	height: 500px;
+	width: 250px;
+	top: 10%;
+	left:60%;
 }
 .tiger
 {
