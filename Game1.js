@@ -17,11 +17,17 @@ $(document).ready(function()
 	var mixedanimals = [];
 	var lastpress;
 	var matchingcounter =0;
-	var init = function(animal1, animal2, animal3, animal4, animal5)
+	var begin = function(animal1, animal2, animal3, animal4, animal5)
 	{
+		if(mixedanimals.length){
+		$(".imag").each(function(i){
+			$(this).toggleClass(mixedanimals[i].name, false);
+		});
+		}
 		counter = "";
 		mixedanimals = [];
 		matchingcounter = 0;
+		lastpress = "";
 		animals = [animal1, animal1, animal2, animal2, animal3, animal3, animal4, animal4, animal5, animal5];
 		while(animals.length>0)
 		{
@@ -35,37 +41,58 @@ $(document).ready(function()
 		}
 		$(".imag").each(function(i)
 		{
+				$(this).toggleClass("facedown", true);
 			$(this).toggleClass(mixedanimals[i].name, true);
-			$(this).toggleClass("facedown", true);
+			$(".imag").css("visibility", "visible");
 		});
 	}
-	init(cow, horse, pig, chicken, duck);
+	begin(cow, horse, pig, chicken, duck);
 	var fireworks = function()
 	{	
-		var fireworking = function(spec, name)
+		var fireworking = function(spec, name, location)
 		{
-		$(".imag").css("visibility", "hidden");
-		$(".imag."+name).css("visibility", "visible");
-		$(".imag."+name).first().toggleClass("fireworks1", true);
-		$(".imag."+name).last().toggleClass("fireworks2", true);
-		spec.play();
-		for(var k=0; k<30; k++)
+			$(".imag").css("visibility", "hidden");
+			$(".imag."+name).css("visibility", "visible");
+			$(".imag."+name).first().toggleClass("fireworks1", true);
+			$(".imag."+name).last().toggleClass("fireworks2", true);
+			spec.play();
+			var l=0;
+			for(var k=0; k<10;k++)
 			{
 				$(".imag."+name).animate({top:"5%"});
 				$(".imag."+name).animate({top:"10%", left:"+=5%"});
 				$(".imag."+name).animate({top:"15%", left:"-=5%"});
 				$(".imag."+name).animate({top:"10%", left:"-=5%"});
-				$(".imag."+name).animate({top:"10%", left:"+=5%"});
-			}
+				$(".imag."+name).animate({top:"10%", left:"+=5%"}, 500,
+			function(){
+				l++;
+				if (l>19){
+			{	
+				$(".imag").stop(true, true);
+				$(".imag."+name).first().toggleClass("fireworks1", false);
+				$(".imag."+name).first().css("top", "");
+				$(".imag."+name).first().css("left", "");
+				$(".imag."+name).last().toggleClass("fireworks2", false);
+				$(".imag."+name).last().css("top","");
+				$(".imag."+name).last().css("left", "");
+				//spec.pause();
+				begin(elephant, tiger, monkey, snake, crocodile);}
+				}});}
+					
 		}
+		var check = false;
 		for(var j=0; j<mixedanimals.length; j++)
 		{
-			if(mixedanimals[j].special)
+			if(mixedanimals[j].special && check ===true)
 			{
-				fireworking(mixedanimals[j].special, mixedanimals[j].name);
+				fireworking(mixedanimals[j].special, mixedanimals[j].name);		
+			}
+			else if(mixedanimals[j].special && check===false)
+			{
+				check = true;
 			}
 		}
-	init(elephant, tiger, monkey, snake, crocodile)}
+	}
 	
 	$(".imag").each(function(i)
 	{
@@ -102,7 +129,7 @@ $(document).ready(function()
 						matchingcounter = matchingcounter +1;
 						if(mixedanimals.length===matchingcounter)
 						{
-						fireworks(init);
+						fireworks();
 						}
 					}
 				});	
@@ -133,6 +160,9 @@ $(document).ready(function()
 		});
 		
 	});
+	$("button").click(function(){
+	begin(elephant, tiger, monkey, snake, crocodile);
+});
 });
 
 })();
