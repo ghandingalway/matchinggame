@@ -12,23 +12,31 @@ $(document).ready(function()
 	var pig = {name:'pig', sound:$("#pig1")[0]};
 	var chicken = {name:'chicken', sound:$("#chicken1")[0]};
 	var duck = {name:'duck', sound:$("#duck1")[0], special:$("#FiveDucks")[0]};
+	var car = {name:'car', sound:$("#Car")[0]};
+	var bus = {name:'bus', sound:$("#Car")[0], special:$("#Wheels")[0]};
+	var bicycle = {name:'bicycle', sound:$("#Bicycle")[0]};
+	var tractor = {name:'tractor', sound:$("#Car")[0]};
+	var fengine = {name:'fengine', sound:$("#Car")[0]};
+	var characters = [[elephant, tiger, monkey,snake, crocodile], [cow, horse, pig, chicken, duck], [car, bus, bicycle, tractor, fengine]];
 	var counter = "";
 	var applause = $('#applause')[0];
 	var mixedanimals = [];
 	var lastpress;
 	var matchingcounter =0;
-	var begin = function(animal1, animal2, animal3, animal4, animal5)
+	var characterrandom = Math.floor(Math.random()*characters.length);
+	var begin = function(category)
 	{
 		if(mixedanimals.length){
 		$(".imag").each(function(i){
 			$(this).toggleClass(mixedanimals[i].name, false);
 		});
+		
 		}
 		counter = "";
 		mixedanimals = [];
 		matchingcounter = 0;
 		lastpress = "";
-		animals = [animal1, animal1, animal2, animal2, animal3, animal3, animal4, animal4, animal5, animal5];
+		animals = [category[0], category[0], category[1], category[1], category[2], category[2], category[3], category[3], category[4], category[4]];
 		while(animals.length>0)
 		{
 			var i = Math.floor(Math.random()*animals.length);
@@ -45,8 +53,9 @@ $(document).ready(function()
 			$(this).toggleClass(mixedanimals[i].name, true);
 			$(".imag").css("visibility", "visible");
 		});
+		characterrandom = Math.floor(Math.random()*characters.length);
 	}
-	begin(cow, horse, pig, chicken, duck);
+	begin(characters[characterrandom]);
 	var fireworks = function()
 	{	
 		var fireworking = function(spec, name, location)
@@ -76,7 +85,7 @@ $(document).ready(function()
 				$(".imag."+name).last().css("top","");
 				$(".imag."+name).last().css("left", "");
 				//spec.pause();
-				begin(elephant, tiger, monkey, snake, crocodile);}
+				begin(characters[characterrandom]);}
 				}});}
 					
 		}
@@ -161,7 +170,7 @@ $(document).ready(function()
 		
 	});
 	$("button").click(function(){
-	begin(elephant, tiger, monkey, snake, crocodile);
+	begin(characters[characterrandom]);
 });
 });
 
